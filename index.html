@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Web</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <style>
+        .bg_cont
+        {
+            background-size: cover;
+            height: 100vh;
+        }
+        .nav_bar
+        {
+            height: 10vh;
+            width: 100vw;
+            background-color: black;
+            justify-content: space-evenly;
+            align-items: center
+        }
+        .tittle_name
+        {
+            color: white;
+            font-family: Lucida Handwriting;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .nav_bar_tittle
+        {
+            font-family: Verdana;
+            width: 50vw;
+            justify-content: space-between;
+        }
+        .body_sec
+        {
+            background-image: url('/10.jpg');
+            background-size: cover;
+            width: 100vw;
+            height: 90vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .boy-sec-tittle
+        {
+            font-weight: bold;
+            color: black;
+            font-family: Lucida Handwriting;
+            font-size: 50px;
+        }
+        .body-sec-quote
+        {
+            color: #2ef07e;
+            font-size: 70px;
+            font-weight: 900;
+        }
+        .body-sec-third-tittle
+        {
+            color: #b67af5;
+            font-family: Garamond;
+            font-weight: bold;
+            margin-bottom: 80px;
+        }
+        .back-button
+        {
+            width: 90px;
+            height: 30px;
+            background-color: transparent;
+            color: #2ef07e;
+            font-family: Lucida Handwriting;
+            border-radius: 30px;
+            border-color: white;
+            margin-top: 50px;
+        }
+
+
+
+
+        .card_one
+        {
+            background-image: url('/7.jpg');
+            background-size: cover;
+            height: 40vh;
+        }
+        .podcasts_heading
+        {
+            color: #2ef07e;
+            font-size: 70px;
+            font-weight: 900;
+            padding: 100px;
+        }
+
+        .card_two
+        {
+            background-image: url('/11.jpg');
+            background-size: cover;
+            padding: 15px;
+            height: 70vh;
+        }
+        .bg_detail_card
+        {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .detailes_card
+        {
+            border: 3px solid white;
+            background-color: transparent;
+            border-radius: 15px;
+            margin: 10px;
+            text-align: center;
+            height: 200px;
+        }
+        .img_one
+        {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            width: 200px;
+            height: 120px;
+        }
+        .podcast-name
+        {
+            color: white;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .episodes-count
+        {
+            color: yellow;
+            font-family: Roboto;
+            font-size: 16px;
+        }
+
+
+
+
+
+        .arijit-page-bg-container
+        {
+            background-image: url('/24.webp');
+            background-size: cover;
+            height: 100vh;
+        }
+        .arijit-img
+        {
+            width: 20vw;
+            height: 35vh;
+            margin-top: 50px;
+            margin-left: 50px;
+            border-radius: 10px;
+        }
+        .arijit-music-text-box
+        {
+            width: 60vw;
+            height: 35vh;
+            margin-top: 60px;
+            margin-left: 20px;
+        }
+        .song-tittle
+        {
+            margin-top: 60px;
+            color: #f0ff21;
+            font-weight: 800;
+            font-family: Verdana;
+            font-size: 45px;
+        }
+        .song-singer
+        {
+            color: #ae82ff;
+            font-size: 22px;
+        }
+        .song-release-date
+        {
+            color: white;
+            font-size: 17px;
+            margin-top: 20px;
+        }
+        .song-list-div
+        {
+            text-align: center;
+            justify-content: center;
+            color: white;
+        }
+        table, th, td
+        {
+            font-size: 20px;
+            border-width: 0px;
+            border-bottom: 1px solid #f0ff21;
+            width: 95vw;
+            height: 7vh;
+        }
+        .bottom_bar
+        {
+            display: flex;
+            width: 100vw;
+            height: 20vh;
+            position:fixed;
+            z-index: 1;
+            background-color: #080112;
+            position: fixed; 
+        }
+
+        .bottom-bar-div1
+        {
+            width: 40vw;
+        }
+        .bottom-bar-div1-img
+        {
+            width: 4vw;
+            height: 80px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        .bottom-song-first-tittle
+        {
+            color: yellow;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+        .bottom-song-sec-tittle
+        {
+            color: white;
+            font-size: 13px;
+        }
+
+        .bottom-bar-div2
+        {
+            justify-content: center;
+            width: 40vw;
+        }
+        .imgplayer
+        {
+            margin-top: 25px;
+            width: 28px;
+            height: 28px;
+        }
+        .imgplayerbtn
+        {
+            margin-top: 15px;
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .imgplayermute
+        {
+            margin-top: 26px;
+            width: 25px;
+            height: 25px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .bottom-bar-div3
+        {
+            width: 40vw;
+        }
+        .btn
+        {
+            margin-top: 14px;
+            background-color: transparent;
+            border-color: #bca2f5;
+            height: 40px;
+            width: 85px;
+            border-radius: 5px;
+            border-width: 1px;
+        }
+    </style>    
+</head>
+<body>
+
+    <!-- Music Page Home Section  -->
+    <div id="sectionHome">
+        <div class="bg_cont">
+            <div class="nav_bar d-flex flex-row">
+                <h1 class="tittle_name">TuneSphere</h1>
+                <div class="nav_bar_tittle d-flex flex-row">
+                    <a href="#" style="color: #2ef07e;">Home</a>
+                    <a href="#" style="color: white;" onclick="display('sectionSingers')">Singers</a>
+                    <a href="#" style="color: white;">Music</a>
+                    <a href="#" style="color: white;">Fevorite</a>
+                    <a href="#" style="color: white;">Download</a>
+                </div>
+            </div>
+    
+            <div class="body_sec d-flex flex-column">
+                <h1 class="boy-sec-tittle"> TuneSphere</h1>
+                <h1 class="body-sec-quote">THE SOUL OF MUSIC</h1>
+                <h1 class="body-sec-third-tittle">Official Music Website</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Music Page Singer Page Section  -->
+    <div id="sectionSingers">
+        <div class="card_one">
+            <h1 class="podcasts_heading">Singers...</h1>
+        </div>
+        
+        <div class="card_two">
+            <div class="bg_detail_card d-flex flex-row">
+                <div class="detailes_card" onclick="display('sectionArijit')" >
+                    <img class="img_one" src="https://images.indianexpress.com/2021/05/arijit-singh-1200.jpg?w=414" alt="" />
+                    <h1 class="podcast-name">Arijit Singh</h1>
+                    <p class="episodes-count">24 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionAtif')" >
+                    <img class="img_one" src="https://www.desiblitz.com/wp-content/uploads/2019/11/20-Best-Atif-Aslam-Songs-f.jpg"/>
+                    <h1 class="podcast-name">Atif Aslam</h1>
+                    <p class="episodes-count">12 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionJubin')" >
+                    <img class="img_one" src="https://drytickets.com.au/assets/upload/750/450/60/celebrities/550-jubin-nautiyal.jpg" alt="" />
+                    <h1 class="podcast-name">Jubin Nautiyal</h1>
+                    <p class="episodes-count">24 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionDarshan')" >
+                    <img class="img_one" src="https://e1.pxfuel.com/desktop-wallpaper/563/123/desktop-wallpaper-darshan-raval.jpg"/>
+                    <h1 class="podcast-name">Darshan Raval</h1>
+                    <p class="episodes-count">12 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionArmaan')" >
+                    <img class="img_one" src="https://www.baltana.com/files/wallpapers-22/Armaan-Malik-Best-Wallpaper-54931.jpg" alt="" />
+                    <h1 class="podcast-name">Armaan Malik</h1>
+                    <p class="episodes-count">24 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionYoYo')" >
+                    <img class="img_one" src="https://c4.wallpaperflare.com/wallpaper/822/887/816/5bd1323690f00-wallpaper-preview.jpg"/>
+                    <h1 class="podcast-name">Yo Yo Honey Singh</h1>
+                    <p class="episodes-count">12 Episodes</p>
+                </div>
+            </div>
+            
+            <div class="bg_detail_card d-flex flex-row">
+                <div class="detailes_card" onclick="display('sectionSonu')" >
+                    <img class="img_one" src="https://wallpapercave.com/wp/wp4101501.jpg"/>
+                    <h1 class="podcast-name">Sonu Nigam</h1>
+                    <p class="episodes-count">49 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionShreya')" >
+                    <img class="img_one" src="https://enewsinsight.com/wp-content/uploads/2021/06/Shreya-Ghoshal-Day-741x430.jpg"/>
+                    <h1 class="podcast-name">Shreya Goshal</h1>
+                    <p class="episodes-count">49 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionBadshaan')" >
+                    <img class="img_one" src="https://i.ytimg.com/vi/Oxnlv5o1NRk/maxresdefault.jpg"/>
+                    <h1 class="podcast-name">Badshaah</h1>
+                    <p class="episodes-count">49 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionKk')" >
+                    <img class="img_one" src="https://maktoobmedia.com/wp-content/uploads/2022/05/images-2022-05-31T235103.888.jpeg"/>
+                    <h1 class="podcast-name">K K</h1>
+                    <p class="episodes-count">49 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionArrehmaan')" >
+                    <img class="img_one" src="https://www.superprof.co.in/blog/wp-content/uploads/2023/03/image2-4.png"/>
+                    <h1 class="podcast-name">A. R. Rehmaan</h1>
+                    <p class="episodes-count">49 Episodes</p>
+                </div>
+                <div class="detailes_card" onclick="display('sectionShaan')" >
+                    <img class="img_one" src="https://e1.pxfuel.com/desktop-wallpaper/3/933/desktop-wallpaper-shaan-wiki-singer-shaan.jpg"/>
+                    <h1 class="podcast-name">Shaan</h1>
+                    <p class="episodes-count">49 Episodes</p>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row justify-content-center">
+                <button class="back-button" onclick="display('sectionHome')"> Back </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <!-- Music Page 'Arijit Page' Section  -->
+    <div id="sectionArijit">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://wallpapers.com/images/hd/arijit-singh-playing-piano-and-singing-wbf0geuhfhg4salz.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Chal Wahan Jaate Hain</h1>
+                    <h1 class="song-singer">Album Song</h1>
+                    <p class="song-release-date">17 July 2015</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://wallpapers.com/images/hd/arijit-singh-playing-piano-and-singing-wbf0geuhfhg4salz.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Woh Din</h1>
+                            <h1 class="bottom-song-sec-tittle">Chhichhore 2018</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Music Page 'Atif Aslam' Section  -->
+    <div id="sectionAtif">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://e0.pxfuel.com/wallpapers/116/352/desktop-wallpaper-atif-aslam-collections-of-thumbnail.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Tu Jaane Na</h1>
+                    <h1 class="song-singer">Azab prem Ki Gazab Kahaani</h1>
+                    <p class="song-release-date">10 Aug 2009</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://e0.pxfuel.com/wallpapers/116/352/desktop-wallpaper-atif-aslam-collections-of-thumbnail.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Tu Jaane Na</h1>
+                            <h1 class="bottom-song-sec-tittle">Azab prem Ki Gazab Kahaani 2009</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Music Page 'Jubin Nautiyal' Section  -->
+    <div id="sectionJubin">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://wallpapercave.com/wp/wp8847914.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Zindagi Kuchh Toh Bata</h1>
+                    <h1 class="song-singer">Bajrangi Bhaijaan</h1>
+                    <p class="song-release-date">11 May 2015</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://wallpapercave.com/wp/wp8847914.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Zindagi Kuchh Toh Bata</h1>
+                            <h1 class="bottom-song-sec-tittle">Bajrangi Bhaijaan 2015</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                            <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Music Page 'Darshan Raval' Section  -->
+    <div id="sectionDarshan">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://thepatriot.in/wp-content/uploads/2023/07/Darshan.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Baarish Lete Ana</h1>
+                    <h1 class="song-singer">Album Song</h1>
+                    <p class="song-release-date">4 April 2019</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://thepatriot.in/wp-content/uploads/2023/07/Darshan.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Baarish Lete Ana</h1>
+                            <h1 class="bottom-song-sec-tittle">Album Song 2019</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Music Page 'Armaan Malik' Section  -->
+    <div id="sectionArmaan">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://wallpapers.com/images/hd/performing-armaan-malik-uworlfvi7ug6jg0s.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Bol Do Na Zara</h1>
+                    <h1 class="song-singer">Album Song</h1>
+                    <p class="song-release-date">17 July 2019</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://wallpapers.com/images/hd/performing-armaan-malik-uworlfvi7ug6jg0s.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Bol Do Na Zara</h1>
+                            <h1 class="bottom-song-sec-tittle">Album Song 2014</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Music Page 'Yo Yo Honey Singh' Section  -->
+    <div id="sectionYoYo">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://e0.pxfuel.com/wallpapers/20/364/desktop-wallpaper-yo-yo-honey-singh-music-videos-stats-and-last-fm.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Blue Eyes</h1>
+                    <h1 class="song-singer">Album Song</h1>
+                    <p class="song-release-date">5 Feb 2012</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://e0.pxfuel.com/wallpapers/20/364/desktop-wallpaper-yo-yo-honey-singh-music-videos-stats-and-last-fm.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Blue Eyes</h1>
+                            <h1 class="bottom-song-sec-tittle">Album Song 2012</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Music Page 'Sonu Nigam' Section  -->
+    <div id="sectionSonu">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://wallpapercave.com/wp/wp4101519.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Abh Mujh Main Kahin</h1>
+                    <h1 class="song-singer">Agnipath</h1>
+                    <p class="song-release-date">4 July 2011</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://wallpapercave.com/wp/wp4101519.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Abh Mujh Main Kahin</h1>
+                            <h1 class="bottom-song-sec-tittle">Agnipath 2011</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Music Page 'Shreya Goshal' Section  -->
+    <div id="sectionShreya">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://assets.zeezest.com/blogs/PROD_ZZ%20SEO%20Image%20Resizing%20%2850%29_1678265910429.png" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Bahaara</h1>
+                    <h1 class="song-singer">Album Song</h1>
+                    <p class="song-release-date">8 Dec 2015</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://assets.zeezest.com/blogs/PROD_ZZ%20SEO%20Image%20Resizing%20%2850%29_1678265910429.png" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Bahaara</h1>
+                            <h1 class="bottom-song-sec-tittle">Album Song 2015</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Music Page 'Badshaah' Section  -->
+    <div id="sectionBadshaan">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://e0.pxfuel.com/wallpapers/502/808/desktop-wallpaper-singer-rapper-badshah-latest-and-2020-2021-2020-rappers.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Bad Boy</h1>
+                    <h1 class="song-singer">Saaho</h1>
+                    <p class="song-release-date">17 Oct 2019</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://e0.pxfuel.com/wallpapers/502/808/desktop-wallpaper-singer-rapper-badshah-latest-and-2020-2021-2020-rappers.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Bad Boy</h1>
+                            <h1 class="bottom-song-sec-tittle">Saaho 2019</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Music Page 'K K' Section  -->
+    <div id="sectionKk">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://wallpaperaccess.com/full/8286281.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Dil Ibadat</h1>
+                    <h1 class="song-singer">Tum Mile</h1>
+                    <p class="song-release-date">20 Sep 2009</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://wallpaperaccess.com/full/8286281.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Dil Ibadat</h1>
+                            <h1 class="bottom-song-sec-tittle">Tum mile 2019</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Music Page 'A. R. Rehmaan' Section  -->
+    <div id="sectionArrehmaan">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://images.firstpost.com/wp-content/uploads/large_file_plugin/2021/04/1618037715_arrahman640.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Aal Izz Well</h1>
+                    <h1 class="song-singer">3 Idiot</h1>
+                    <p class="song-release-date">9 June 2008</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://images.firstpost.com/wp-content/uploads/large_file_plugin/2021/04/1618037715_arrahman640.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Aal Izz Well</h1>
+                            <h1 class="bottom-song-sec-tittle">3 Idot 2008</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Music Page 'Shaan' Section  -->
+    <div id="sectionShaan">
+        <div class="arijit-page-bg-container">
+            <div class="d-flex flex-row">
+                <img class="arijit-img" src="https://images.ctfassets.net/opz1rk40r4ou/HAiqTUf4D8iU6QHyRfjCO/5d161fee70752c943c7931e029c50ca7/Shaan_performs_live_at_Jubilee_Stage_during_India_National_Day_Web_Image_m70744.jpg" alt="">
+                <div class="arijit-music-text-box">
+                    <h1 class="song-tittle">Apna Har Din</h1>
+                    <h1 class="song-singer">Golmaal 3</h1>
+                    <p class="song-release-date">12 Jan 2010</p>
+                </div>
+            </div>
+
+            <div class="song-list-div d-flex flex-row">
+                <table>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Bandeya Rey Bandeya</td>
+                        <td>Simba</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>O Mahi</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Tera Yaar Hoo Main</td>
+                        <td>Sonu Ke Titu Ke Sweety</td>
+                        <td>2018</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Sajni</td>
+                        <td>Laapata Ladies </td>
+                        <td>2024</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Satranga</td>
+                        <td>Animal</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td>Lutt Putt Gaya</td>
+                        <td>Dunki</td>
+                        <td>2023</td>
+                        <td>:</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <nav class="bottom_bar d-flex flex-row">
+                    <div class="bottom-bar-div1 d-flex flex-row">
+                        <img class="bottom-bar-div1-img" src="https://images.ctfassets.net/opz1rk40r4ou/HAiqTUf4D8iU6QHyRfjCO/5d161fee70752c943c7931e029c50ca7/Shaan_performs_live_at_Jubilee_Stage_during_India_National_Day_Web_Image_m70744.jpg" alt="">
+                        <div>
+                            <h1 class="bottom-song-first-tittle">Apna Har Din</h1>
+                            <h1 class="bottom-song-sec-tittle">Golmaal 3 2010</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom-bar-div2 d-flex flex-row">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                        <img class="imgplayer" src="/previous.png" alt="">
+                        <img class="imgplayerbtn" src="/play-button (1).png" alt="">
+                        <img class="imgplayer" src="/next.png" alt="">
+                        <img class="imgplayermute" src="/mute.png" alt="">
+                    </div>
+                    <div class="bottom-bar-div3 d-flex flex-row justify-content-center">
+                        <button class="btn btn-primary" onclick="display('sectionSingers')" >Back</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+
+</body>
+</html>
